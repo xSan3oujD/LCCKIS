@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Club Curubis Product Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <h1>Leo Club Curubis <span class="psec">Product Inventory</span></h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/leo.club.curubis.korba" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/leo_club_curubis_korba/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="https://www.facebook.com/leo.club.curubis.korba" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/leo_club_curubis_korba/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </header>
+
+    <div class="container" id="product-container">
+        <!-- Product items will be dynamically inserted here -->
+    </div>
+    <button id="add-item-button"><i class="fas fa-plus"></i></button>
+    <footer>
+        <p>&copy; 2025 Leo Club Curubis. All rights reserved.</p>
+    </footer>
+
+    <!-- Add Item Modal -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New Item</h2>
+            <form id="item-form">
+                <label for="item-name">Name:</label>
+                <input type="text" id="item-name" name="item-name" required>
+                <label for="item-price">Price:</label>
+                <input type="number" id="item-price" name="item-price" required>
+                <label for="item-quantity">Quantity:</label>
+                <input type="number" id="item-quantity" name="item-quantity" required>
+                <label for="item-image">Image:</label>
+                <input type="file" id="item-image" name="item-image" accept="image/*" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Item</h2>
+            <form id="edit-form">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" name="edit-name" required>
+                <label for="edit-price">Price:</label>
+                <input type="number" id="edit-price" name="edit-price" required>
+                <label for="edit-quantity">Quantity:</label>
+                <input type="number" id="edit-quantity" name="edit-quantity" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>
